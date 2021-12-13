@@ -48,8 +48,8 @@ def pykern():
     global output
     global osicon
     curdir = osdir
-    print(Fore.BLUE + "PyKern EXTInstaller" + Style.RESET_ALL)
-    print(Fore.MAGENTA + "Usage:\n\t[commandname] [user|sys]" + Style.RESET_ALL)
+    print(Fore.BLUE + "PyKern's EXT-Installer" + Style.RESET_ALL)
+    print(Fore.MAGENTA + "Usage:  \n\t[commandname] [user|sys]" + Style.RESET_ALL)
     while (True):
         if curdir.find(osdir) == -1:
             curdir = osdir
@@ -106,9 +106,9 @@ def boot():
         if os.path.isfile(os.path.join(pkgdir, path)):
             print("[-] - Loaded " + path.replace(".py", ""))
             packagecount += 1
-    print("[x] Done, loaded " + str(packagecount) + " package(s).")
+    print("[x] Done, loaded: " + str(packagecount) + " package(s).")
     cls()
     pykern()
 
-print('Booting...')
+print('Booting up...')
 boot()
