@@ -54,7 +54,7 @@ def pykern():
     global displayusername
     curdir = osdir
     displayusername = username
-    print(Fore.BLUE + "PyKern v0.0.1" + Style.RESET_ALL)
+    print(Fore.BLUE + "PyKern v0.0.1b - github release " + Style.RESET_ALL)
     while (True):
         if su == True:
             displayusername = "root"
@@ -101,21 +101,21 @@ def boot():
     f = open(datafolder() + "/config.pykern", "r")
     osdir = f.readline()
     f.close()
-    print("[x] Connected to " + osdir + ".")
+    print("[x] Connected to:  " + osdir + ".")
     print("[-] Loading user")
     uf = open(osdir + "/user/.curuser", "r")
     username = uf.readline().lstrip().rstrip()
     uf.close()
-    print("[x] Connected to user " + username)
-    print("[-] Loading packages")
+    print("[x] Connected to the user: " + username)
+    print("[-] Loading the packages")
     pkgdir = osdir + "/user/" + username + "/pkg"
     for path in os.listdir(pkgdir):
         if os.path.isfile(os.path.join(pkgdir, path)):
             print("[-] - Loaded " + path.replace(".py", ""))
             packagecount += 1
-    print("[x] Done, loaded " + str(packagecount) + " package(s).")
+    print("[x] Done, loaded: " + str(packagecount) + " package(s).")
     cls()
     pykern()
 
-print('Booting...')
+print('Booting up...')
 boot()
