@@ -25,6 +25,13 @@ def setupInit():
     print("The Terminal OS made on python for fun!")
     print("Choose install directory:")
     installdir = input()
+    if installdir == "":
+        print("ERROR")
+        print("'' is not a correct directory")
+        print("You must atleast type a letter, number or a symbol")
+        print("Press ENTER to restart setup")
+        input()
+        setupInit()
     print("[-] Creating config file...")
     configfile = open(datafolder() + "/config.pykern", "w")
     configfile.write(installdir)
